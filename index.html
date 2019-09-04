@@ -27,7 +27,7 @@
     var someArr = [];
     function printValues(obj) {
         for (var key in obj) {
-            if (typeof obj[key] === "object") {
+            if (typeof obj[key] === "object" && obj[key] !== null) {
                 printValues(obj[key]);
             } else {
                 var item = obj[key];
