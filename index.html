@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var obj = {
+        name : 'i',
+        arr: [
+            {
+                id: 1,
+                name: 'g',
+                someobj : {k:'or', number: 1995, married: null}
+            },
+            5,
+            [
+                {id: 2, name: 'valetski'},
+                true,
+                undefined
+            ]
+
+        ]
+    };
+
+    var someArr = [];
+    function printValues(obj) {
+        for (var key in obj) {
+            if (typeof obj[key] === "object") {
+                printValues(obj[key]);
+            } else {
+                var item = obj[key];
+                someArr.push(item);
+            }
+        }
+
+    }
+
+    printValues(obj);
+    console.log(someArr);
+
+</script>
+
+</body>
+</html>
